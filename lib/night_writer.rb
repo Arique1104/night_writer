@@ -1,7 +1,7 @@
 class NightWriter
- #attr_reader
+ attr_reader 
   def initialize
-   file = File.open("message.txt")
+
   end
 
 end
