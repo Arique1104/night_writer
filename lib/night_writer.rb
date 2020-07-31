@@ -8,4 +8,8 @@ class NightWriter
     File.open(@message_file)
   end
 
+  def read_lines
+    open_file.readlines.map(&:chomp)
+  end
+
 end

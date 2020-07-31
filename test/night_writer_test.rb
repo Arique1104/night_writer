@@ -21,8 +21,12 @@ class NightWriterTest < Minitest::Test
     assert_equal File, night_writer.open_file.class
   end
 
+  def test_it_can_read_lines
+    night_writer = NightWriter.new
+    assert_equal ["Hello World!"], night_writer.read_lines
+  end
+
 end
 
 
-# @file = File.open("message.txt")
 # @file_data = @file.readlines.map(&:chomp)[0].split(/ /)
