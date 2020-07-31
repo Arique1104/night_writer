@@ -18,7 +18,7 @@ class NightWriterTest < Minitest::Test
 
   def test_it_can_open_file
     night_writer = NightWriter.new
-    assert_equal " ", night_writer.open_file
+    assert_equal File, night_writer.open_file.class
   end
 
 end

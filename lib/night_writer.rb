@@ -5,7 +5,7 @@ class NightWriter
   end
 
   def open_file
-
+    File.open(@message_file)
   end
 
 end
