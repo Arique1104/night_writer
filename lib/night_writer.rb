@@ -4,4 +4,8 @@ class NightWriter
     @message_file = "message.txt"
   end
 
+  def open_file
+
+  end
+
 end
