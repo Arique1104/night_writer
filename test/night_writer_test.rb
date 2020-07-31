@@ -12,7 +12,7 @@ class NightWriterTest < Minitest::Test
 
   def test_it_has_attributes
     night_writer = NightWriter.new
-    message_file = "message.txt"
+    message_file = File.open("message.txt")
     assert_equal message_file, night_writer.message_file
   end
 
