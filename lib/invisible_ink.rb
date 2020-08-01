@@ -10,6 +10,9 @@ class InvisibleInk
     File.read(@message)
   end
 
+  def write_file
+    File.write(@new_file, 'w')
+  end
 
 
 end

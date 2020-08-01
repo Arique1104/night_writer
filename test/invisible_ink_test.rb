@@ -25,4 +25,8 @@ class InvisibleInkTest < Minitest::Test
 
   end
 
+  def test_it_can_create_a_new_file
+    assert_equal 1, @invisible_ink.write_file
+  end
+
 end
