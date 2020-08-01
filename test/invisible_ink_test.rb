@@ -35,5 +35,15 @@ class InvisibleInkTest < Minitest::Test
   #   assert_equal "Created 'braille.txt' containing 13 characters", @invisible_ink.print_results
   #
   # end
+  def test_it_can_create_a_braille_equivalent_for_each_letter
+    skip
+    assert_equal " ", @invisible_ink.braille("a")
 
+  end
+
+  def test_it_can_create_letters_and_symbols_array
+
+    assert_equal ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "'", ",", "-", "?"], @invisible_ink.letters_and_symbols_array
+
+  end
 end

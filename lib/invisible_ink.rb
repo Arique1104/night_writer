@@ -18,5 +18,12 @@ class InvisibleInk
     print "Created '#{@new_file}' containing #{@count} characters"
   end
 
+  def braille(letter)
+    keys = ("a".."z").to_a << ["!", "'", ",", "-", "?"]
+    keys.flatten
+
+    # require "pry"; binding.pry
+  end
+
 
 end
