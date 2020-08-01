@@ -23,7 +23,13 @@ class InvisibleInk
     keys.flatten
   end
 
+  
+
   def braille(letter)
+    braille_hash = Hash.new
+    letters_and_symbols.each do |letter|
+      braille_hash[letter] = ""
+    end
 
     # require "pry"; binding.pry
   end
