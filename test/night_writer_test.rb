@@ -10,11 +10,6 @@ class NightWriterTest < Minitest::Test
     assert_instance_of NightWriter, night_writer
   end
 
-  def test_it_has_attributes
-    night_writer = NightWriter.new
-
-    assert_equal "test_message.txt", night_writer.message_file
-  end
 
   def test_it_can_read_the_file
     night_writer = NightWriter.new
