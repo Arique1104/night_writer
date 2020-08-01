@@ -54,7 +54,6 @@ class InvisibleInk
 
   def find_braille(letter)
     @braille_dictionary[letter]
-
   end
 
   def find_letter(braille)

@@ -78,8 +78,14 @@ class InvisibleInkTest < Minitest::Test
   end
 
   def test_it_can_find_a_braille_equivalent_for_each_letter
-    skip
-    assert_equal " ", @invisible_ink.braille("a")
+    @invisible_ink.set_hash
+    assert_equal "0.\n..\n..", @invisible_ink.find_braille("a")
+
+  end
+
+  def test_it_can_find_letter
+    @invisible_ink.set_hash
+    assert_equal "a", @invisible_ink.find_letter("0.\n..\n..")
 
   end
 
