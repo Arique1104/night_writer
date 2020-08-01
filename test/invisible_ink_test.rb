@@ -17,6 +17,7 @@ class InvisibleInkTest < Minitest::Test
 
   def test_it_has_attributes
     assert_equal @message_file, @invisible_ink.message
+    assert_equal @new_file, @invisible_ink.new_file
   end
 
 end
