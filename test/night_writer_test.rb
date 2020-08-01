@@ -18,12 +18,14 @@ class NightWriterTest < Minitest::Test
 
   def test_it_can_read_the_file
     night_writer = NightWriter.new
-    assert_equal File, night_writer.read_file.class
+    assert_equal String, night_writer.read_file.class
   end
 
-  def test_it_can_read_lines
+
+  def test_it_can_write_a_file
     night_writer = NightWriter.new
-    assert_equal ["Hello World!"], night_writer.read_lines
+    assert_equal " ", night_writer.write_file
+
   end
 
 end

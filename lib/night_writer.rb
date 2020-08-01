@@ -4,14 +4,10 @@ class NightWriter
     @message_file = "test_message.txt"
   end
 
-  def open_file
-    File.open(@message_file)
+  def read_file
+    File.read(@message_file)
   end
 
-  def read_lines
-    #every line will be one element of a string within an array
-    open_file.readlines.map(&:chomp)
-  end
 
 
 
