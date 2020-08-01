@@ -6,4 +6,10 @@ class InvisibleInk
     @new_file = new_file
   end
 
+  def read_file
+    File.read(@message)
+  end
+
+
+
 end

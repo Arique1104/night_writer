@@ -20,4 +20,9 @@ class InvisibleInkTest < Minitest::Test
     assert_equal @new_file, @invisible_ink.new_file
   end
 
+  def test_it_can_read_file
+    assert_equal "Hello World!\n", @invisible_ink.read_file
+
+  end
+
 end
