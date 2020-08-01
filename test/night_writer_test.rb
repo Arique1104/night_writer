@@ -29,4 +29,5 @@ class NightWriterTest < Minitest::Test
 end
 
 
+# @file = File.open("message.txt")
 # @file_data = @file.readlines.map(&:chomp)[0].split(/ /)

@@ -9,7 +9,10 @@ class NightWriter
   end
 
   def read_lines
+    #every line will be one element of a string within an array
     open_file.readlines.map(&:chomp)
   end
+
+
 
 end
