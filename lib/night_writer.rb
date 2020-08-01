@@ -1,8 +1,11 @@
+input = File.open(ARGV[0]) do |file|
+        file.read
+end
+output = File.open(ARGV[1], 'w') do |file|
+        file.write(input)
+end
+
 class NightWriter
- attr_reader :message_file
-  def initialize
-    @message_file = "test_message.txt"
-  end
 
   def read_file
     File.read(@message_file)
