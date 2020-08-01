@@ -11,7 +11,11 @@ class InvisibleInk
   end
 
   def write_file
-    File.write(@new_file, 'w')
+    @count = File.write(@new_file, read_file)
+  end
+
+  def print_results
+    print "Created '#{@new_file}' containing #{@count} characters"
   end
 
 

@@ -26,7 +26,14 @@ class InvisibleInkTest < Minitest::Test
   end
 
   def test_it_can_create_a_new_file
-    assert_equal 1, @invisible_ink.write_file
+    assert_equal 13, @invisible_ink.write_file
   end
+
+# THIS TEST NEEDS A MOCKS AND STUB
+  # def test_it_can_print_results
+  #   @invisible_ink.write_file
+  #   assert_equal "Created 'braille.txt' containing 13 characters", @invisible_ink.print_results
+  #
+  # end
 
 end
