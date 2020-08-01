@@ -26,6 +26,7 @@ class InvisibleInkTest < Minitest::Test
   end
 
   def test_it_can_create_a_new_file
+    ###this will need a mocks and stub
     assert_equal 13, @invisible_ink.write_file
   end
 
@@ -36,21 +37,47 @@ class InvisibleInkTest < Minitest::Test
   #
   # end
 
-  def test_it_can_create_letters_and_symbols_array
-
-    assert_equal ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "'", ",", "-", "?"], @invisible_ink.letters_and_symbols
-
-  end
 
   def test_it_can_create_braille_initial_hash
+    # skip
+    #changing to actual braille dictionary
+    expected1 = {}
+    assert_equal expected1, @invisible_ink.braille_dictionary
 
-    expected = {"a"=>"", "b"=>"", "c"=>"", "d"=>"", "e"=>"", "f"=>"", "g"=>"", "h"=>"", "i"=>"", "j"=>"", "k"=>"", "l"=>"", "m"=>"", "n"=>"", "o"=>"", "p"=>"", "q"=>"", "r"=>"", "s"=>"", "t"=>"", "u"=>"", "v"=>"", "w"=>"", "x"=>"", "y"=>"", "z"=>"", "!"=>"", "'"=>"", ","=>"", "-"=>"", "?"=>""}
-
-    assert_equal expected, @invisible_ink.initial_braille_hash
+    expected2 = {
+          "a" => "0.\n..\n..",
+          "b" => "0.\n0.\n..",
+          "c" => "00\n..\n..",
+          "d" => "00\n.0\n..",
+          "e" => "0.\n.0\n..",
+          "f" => "00\n0.\n..",
+          "g" => "00\n00\n..",
+          "h" => "0.\n00\n..",
+          "i" => ".0\n0.\n..",
+          "j" => ".0\n00\n..",
+          "k" => "0.\n..\n0.",
+          "l" => "0.\n0.\n0.",
+          "m" => "00\n..\n0.",
+          "n" => "00\n.0\n0.",
+          "o" => "0.\n.0\n0.",
+          "p" => "00\n0.\n0.",
+          "q" => "00\n00\n0.",
+          "r" => "0.\n00\n0.",
+          "s" => ".0\n0.\n0.",
+          "t" => ".0\n00\n0.",
+          "u" => "0.\n..\n00",
+          "v" => "0.\n0.\n00",
+          "w" => ".0\n00\n.0",
+          "x" => "00\n..\n00",
+          "y" => "00\n.0\n00",
+          "z" => "0.\n.0\n00",
+      }
+      @invisible_ink.set_hash
+    assert_equal expected2, @invisible_ink.braille_dictionary
 
   end
 
-  def test_it_can_create_a_braille_equivalent_for_each_letter
+  def test_it_can_find_a_braille_equivalent_for_each_letter
     skip
     assert_equal " ", @invisible_ink.braille("a")
 
