@@ -13,12 +13,12 @@ class NightWriterTest < Minitest::Test
   def test_it_has_attributes
     night_writer = NightWriter.new
 
-    assert_equal "message.txt", night_writer.message_file
+    assert_equal "test_message.txt", night_writer.message_file
   end
 
-  def test_it_can_open_file
+  def test_it_can_read_the_file
     night_writer = NightWriter.new
-    assert_equal File, night_writer.open_file.class
+    assert_equal File, night_writer.read_file.class
   end
 
   def test_it_can_read_lines

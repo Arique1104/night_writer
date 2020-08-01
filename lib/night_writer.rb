@@ -1,7 +1,7 @@
 class NightWriter
  attr_reader :message_file
   def initialize
-    @message_file = "message.txt"
+    @message_file = "test_message.txt"
   end
 
   def open_file
