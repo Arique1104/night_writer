@@ -89,4 +89,11 @@ class InvisibleInkTest < Minitest::Test
 
   end
 
+  def test_it_can_create_braille_grid
+    #40 characters across means only 20 characters
+
+    expected = [] #Letters for
+    assert_equal expected, @invisible_ink.braille_grid
+  end
+
 end
