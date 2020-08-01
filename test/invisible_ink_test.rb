@@ -43,7 +43,7 @@ class InvisibleInkTest < Minitest::Test
 
   def test_it_can_create_letters_and_symbols_array
 
-    assert_equal ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "'", ",", "-", "?"], @invisible_ink.letters_and_symbols_array
+    assert_equal ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "!", "'", ",", "-", "?"], @invisible_ink.letters_and_symbols
 
   end
 end
