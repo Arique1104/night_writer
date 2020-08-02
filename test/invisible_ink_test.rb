@@ -18,6 +18,8 @@ class InvisibleInkTest < Minitest::Test
   def test_it_has_attributes
     assert_equal @message_file, @invisible_ink.message
     assert_equal @new_file, @invisible_ink.new_file
+    expected = {}
+    assert_equal expected, @invisible_ink.braille_dictionary
   end
 
   def test_it_can_read_file
@@ -33,5 +35,7 @@ class InvisibleInkTest < Minitest::Test
     assert_equal 2, @invisible_ink.write_file
     assert_equal expected, File.read(@invisible_ink.new_file)
   end
+
+
 
 end
