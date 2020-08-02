@@ -1,6 +1,6 @@
 class Braille
  attr_reader  :dictionary
-  def initialize
+  def initialize(message)
     @dictionary = {}
     set_braille_dictionary
   end

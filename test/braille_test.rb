@@ -7,7 +7,8 @@ require "./lib/invisible_ink"
 
 class BrailleTest < Minitest::Test
   def setup
-    @braille = Braille.new
+    @message = "Hello World"
+    @braille = Braille.new(@message)
 
   end
   def test_it_exists
@@ -19,6 +20,8 @@ class BrailleTest < Minitest::Test
     @braille.stubs(:dictionary).returns({})
     expected = {}
       assert_equal expected, @braille.dictionary
+
+    assert_equal @message, @braille.message
   end
 
   def test_it_can_create_braille_initial_hash

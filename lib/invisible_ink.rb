@@ -1,3 +1,4 @@
+
 class InvisibleInk
  attr_reader  :message,
               :new_file
