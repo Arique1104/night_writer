@@ -36,6 +36,7 @@ class Braille
     @dictionary["x"] = "00..00"
     @dictionary["y"] = "00.000"
     @dictionary["z"] = "0..000"
+    @dictionary[" "] = "......"
   end
 
 end
