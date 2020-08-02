@@ -8,6 +8,7 @@ class Braille
   def get_braille(message)
     initial_result = []
     array_of_letters = message.downcase.split("")
+    array_of_letters.delete("\n")
 
     array_of_letters.each do |letter|
       initial_result << @dictionary[letter]
