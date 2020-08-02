@@ -37,7 +37,7 @@ class BrailleTest < Minitest::Test
 
   def test_it_can_get_a_whole_word_and_pull_it_into_braille
 
-    assert_equal
+    assert_equal [["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."],["0.", "0.", "0."],["0.", ".0", "0."], ["..", "..", ".."], [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."],["00", ".0", ".."]], @braille.get_braille("hello world")
 
   end
 
