@@ -2,6 +2,7 @@ class Braille
  attr_reader  :dictionary
   def initialize
     @dictionary = {}
+    set_braille_dictionary
   end
 
   def set_braille_dictionary
