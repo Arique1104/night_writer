@@ -1,13 +1,15 @@
 class Braille
- attr_reader  :dictionary
+ attr_reader  :dictionary,
+              :message
   def initialize(message)
+    @message = message
     @dictionary = {}
     set_braille_dictionary
   end
 
-  def get_braille(message)
+  def get_braille
     initial_result = []
-    array_of_letters = message.downcase.gsub(/[\r\n]/, " ").split("")
+    array_of_letters = @message.downcase.gsub(/[\r\n]/, " ").split("")
     array_of_letters.pop if array_of_letters.last == " "
 
     array_of_letters.each do |letter|
