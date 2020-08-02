@@ -22,14 +22,13 @@ class Braille
     final_result
   end
 
-  def set_grid(message)
-    brailled_message = get_braille(message)
+  def set_grid
     main_message = []
     3.times do
       main_message << Array.new
     end
 
-    brailled_message.each do |a,b,c|
+    get_braille.map do |a,b,c|
       main_message[0] << a
       main_message[1] << b
       main_message[2] << c
