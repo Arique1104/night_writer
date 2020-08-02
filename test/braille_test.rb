@@ -15,7 +15,9 @@ class BrailleTest < Minitest::Test
     @braille
   end
 
-  #def test_it_has_attributes
-  #end
+  def test_it_has_attributes
+    expected = {}
+    assert_equal expected, @braille.dictionary
+  end
 
 end

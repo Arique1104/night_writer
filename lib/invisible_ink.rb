@@ -49,7 +49,6 @@ class InvisibleInk
     @braille_dictionary["y"] = "00.000"
     @braille_dictionary["z"] = "0..000"
 
-      # require "pry"; binding.pry
   end
 
 end
