@@ -3,6 +3,8 @@ require "minitest/pride"
 require "mocha/minitest"
 require "./lib/night_writer"
 require "./lib/invisible_ink"
+require "./lib/braille"
+
 
 class InvisibleInkTest < Minitest::Test
   def setup
@@ -18,7 +20,7 @@ class InvisibleInkTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal @message_file, @invisible_ink.message
+    assert_equal @message_file, @invisible_ink.message_file
     assert_equal @new_file, @invisible_ink.new_file
 
   end
@@ -31,6 +33,15 @@ class InvisibleInkTest < Minitest::Test
   def test_it_can_create_a_new_file
     assert_equal 2, @invisible_ink.write_file
     assert_equal "Hi", File.read(@invisible_ink.new_file)
+  end
+
+  def test_it_can_write_brialled_letters_in_new_file
+    message_file = "message.txt"
+    new_file = "braille.txt"
+    invisible_ink = InvisibleInk.new(message_file, new_file)
+
+    assert_equal " ", invisible_ink.read_file
+
   end
 
 end
