@@ -24,7 +24,7 @@ class BrailleTest < Minitest::Test
     # skip
     #changing to actual braille dictionary
 
-  @braille.set_braille_hash
+  @braille.set_braille_dictionary
 
   assert_equal "00..00", @braille.dictionary["x"]
 
