@@ -20,8 +20,27 @@ class Braille
     final_result
   end
 
-  def get_braille_grid
+  def set_grid(message)
+    brailled_message = get_braille(message)
+    main_message = []
+    3.times do
+      main_message << Array.new
+    end
 
+    brailled_message.each do |a,b,c|
+      main_message[0] << a
+      main_message[1] << b
+      main_message[2] << c
+
+    end
+
+    main_message.each do |line|
+      line << "\n"
+    end
+
+    joined_main_message = main_message.map do |line|
+        line.join
+    end
   end
 
   def set_braille_dictionary

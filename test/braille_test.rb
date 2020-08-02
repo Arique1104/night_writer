@@ -48,7 +48,7 @@ class BrailleTest < Minitest::Test
 
   def test_it_can_print_up_to_80_dots_wide
 
-    assert_equal "", @braille.set_braille_grid
+    assert_equal ["0.0.0.0.0....00.0.0.00\n", "00.00.0..0..00.0000..0\n", "....0.0.0....00.0.0...\n"], @braille.set_grid("HeLlo WoRld")
 
   end
 
