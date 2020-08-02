@@ -1,9 +1,11 @@
 class InvisibleInk
  attr_reader  :message,
-              :new_file
+              :new_file,
+              :braille_dictionary
   def initialize(message_file, new_file)
     @message = message_file
     @new_file = new_file
+    @braille_dictionary = {}
   end
 
   def read_file
