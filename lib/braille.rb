@@ -1,7 +1,7 @@
 class Braille
- #attr_reader
-  #def initialize(*arg)
-
-  #end
+ attr_reader  :dictionary
+  def initialize
+    @dictionary = {}
+  end
 
 end
