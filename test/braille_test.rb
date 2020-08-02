@@ -18,20 +18,14 @@ class BrailleTest < Minitest::Test
   def test_it_has_attributes
     @braille.stubs(:dictionary).returns({})
     expected = {}
-    assert_equal expected, @braille.dictionary
+      assert_equal expected, @braille.dictionary
   end
 
   def test_it_can_create_braille_initial_hash
-    # skip
-    #changing to actual braille dictionary
-
   @braille.set_braille_dictionary
-
-  assert_equal "00..00", @braille.dictionary["x"]
-
-  assert_equal ".000..", @braille.dictionary["j"]
-
-  assert_equal "00....", @braille.dictionary["c"]
+    assert_equal "00..00", @braille.dictionary["x"]
+    assert_equal ".000..", @braille.dictionary["j"]
+    assert_equal "00....", @braille.dictionary["c"]
 
   end
 
