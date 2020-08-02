@@ -6,6 +6,7 @@ class InvisibleInk
     @message = message_file
     @new_file = new_file
     @braille_dictionary = {}
+    set_braille_hash
   end
 
   def read_file
