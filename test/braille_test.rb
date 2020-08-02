@@ -11,6 +11,7 @@ class BrailleTest < Minitest::Test
     @braille = Braille.new(@message)
 
   end
+  
   def test_it_exists
     assert_instance_of Braille,
     @braille

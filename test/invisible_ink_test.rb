@@ -12,7 +12,6 @@ class InvisibleInkTest < Minitest::Test
     @new_file = "braille.txt"
     @invisible_ink = InvisibleInk.new(@message_file, @new_file)
     @invisible_ink.stubs(:read_file).returns("Hi")
-
   end
 
   def test_it_exists
@@ -31,17 +30,8 @@ class InvisibleInkTest < Minitest::Test
   end
 
   def test_it_can_create_a_new_file
-    assert_equal 2, @invisible_ink.write_file
-    assert_equal "Hi", File.read(@invisible_ink.new_file)
-  end
-
-  def test_it_can_write_brialled_letters_in_new_file
-    message_file = "message.txt"
-    new_file = "braille.txt"
-    invisible_ink = InvisibleInk.new(message_file, new_file)
-
-    assert_equal " ", invisible_ink.read_file
-
+    assert_equal 15, @invisible_ink.write_file
+    assert_equal "0..0\n000.\n....\n", File.read(@invisible_ink.new_file)
   end
 
 end

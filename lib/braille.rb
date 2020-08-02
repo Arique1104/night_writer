@@ -2,9 +2,10 @@ class Braille
  attr_reader  :dictionary,
               :message
   def initialize(message)
-    @message = message
     @dictionary = {}
     set_braille_dictionary
+    @message = message
+    set_grid
   end
 
   def get_braille
@@ -39,9 +40,10 @@ class Braille
       line << "\n"
     end
 
-    joined_main_message = main_message.map do |line|
+    joined_message = main_message.map do |line|
         line.join
     end
+    joined_message[0] + joined_message[1] + joined_message[2]
   end
 
   def set_braille_dictionary

@@ -13,7 +13,10 @@ class InvisibleInk
   end
 
   def write_file
-    File.write(@new_file, read_file)
+    message = read_file
+    braille = Braille.new(message)
+    new_message = braille.set_grid
+    File.write(@new_file, new_message)
   end
 
   def print_results
