@@ -9,6 +9,8 @@ class InvisibleInkTest < Minitest::Test
     @message_file = "message.txt"
     @new_file = "braille.txt"
     @invisible_ink = InvisibleInk.new(@message_file, @new_file)
+    @invisible_ink.stubs(:read_file).returns("Hi")
+
   end
 
   def test_it_exists
@@ -18,20 +20,17 @@ class InvisibleInkTest < Minitest::Test
   def test_it_has_attributes
     assert_equal @message_file, @invisible_ink.message
     assert_equal @new_file, @invisible_ink.new_file
+
   end
 
   def test_it_can_read_file
-    # skip
-    # needs mock
     assert_equal "Hi", @invisible_ink.read_file
 
   end
 
   def test_it_can_create_a_new_file
-    ###this will need a mocks and stub
-    expected = "Hi"
     assert_equal 2, @invisible_ink.write_file
-    assert_equal expected, File.read(@invisible_ink.new_file)
+    assert_equal "Hi", File.read(@invisible_ink.new_file)
   end
 
 end
