@@ -31,7 +31,7 @@ class BrailleTest < Minitest::Test
   end
 
   def test_it_can_write_one_letter_in_braille
-    assert_equal "0.00..", @braille.get_braille("h")
+    assert_equal [["0.", "00", ".."]], @braille.get_braille("h")
 
   end
 

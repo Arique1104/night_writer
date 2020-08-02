@@ -5,8 +5,18 @@ class Braille
     set_braille_dictionary
   end
 
-  def get_braille(letter)
-    @dictionary[letter]
+  def get_braille(message)
+    initial_result = []
+    array_of_letters = message.downcase.split("")
+
+    array_of_letters.each do |letter|
+      initial_result << @dictionary[letter]
+    end
+    final_result = []
+    initial_result.each do |braille_string|
+      final_result << braille_string.scan(/../)
+    end
+    final_result
   end
 
   def set_braille_dictionary
