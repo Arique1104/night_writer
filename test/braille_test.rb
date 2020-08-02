@@ -49,4 +49,10 @@ class BrailleTest < Minitest::Test
 
   end
 
+  def test_it_can_print_up_to_80_dots_wide
+
+    assert_equal "", @braille.set_braille_grid
+
+  end
+
 end
