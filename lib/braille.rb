@@ -5,6 +5,10 @@ class Braille
     set_braille_dictionary
   end
 
+  def get_braille(letter)
+    @dictionary[letter]
+  end
+
   def set_braille_dictionary
     @dictionary["a"] = "0....."
     @dictionary["b"] = "0.0..."
