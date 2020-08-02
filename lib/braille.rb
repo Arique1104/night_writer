@@ -7,8 +7,8 @@ class Braille
 
   def get_braille(message)
     initial_result = []
-    array_of_letters = message.downcase.split("")
-    array_of_letters.delete("\n")
+    array_of_letters = message.downcase.gsub(/[\r\n]/, " ").split("")
+    array_of_letters.pop if array_of_letters.last == " "
 
     array_of_letters.each do |letter|
       initial_result << @dictionary[letter]
@@ -18,6 +18,10 @@ class Braille
       final_result << braille_string.scan(/../)
     end
     final_result
+  end
+
+  def get_braille_grid
+
   end
 
   def set_braille_dictionary
