@@ -31,6 +31,13 @@ class BrailleTest < Minitest::Test
     assert_equal ".000..", @braille.dictionary["j"]
     assert_equal "00....", @braille.dictionary["c"]
     assert_equal "......", @braille.dictionary[" "]
+    assert_equal "..000.", @braille.dictionary["!"]
+    assert_equal "....0.", @braille.dictionary["'"]
+    assert_equal "..0...", @braille.dictionary[","]
+    assert_equal "....00", @braille.dictionary["-"]
+    assert_equal "..00.0", @braille.dictionary["."]
+    assert_equal "..0.00", @braille.dictionary["?"]
+
 
   end
 
@@ -59,9 +66,15 @@ class BrailleTest < Minitest::Test
 
   end
 
-  def test_it_can_print_up_to_80_dots_wide
+  def test_it_can_print_braille_correctly
 
     assert_equal "0.0.0.0.0....00.0.0.00\n00.00.0..0..00.0000..0\n....0.0.0....00.0.0...\n", @braille.set_grid
+
+  end
+
+  def test_it_can_start_a_new_line_after_80_dots_have_been_set
+
+    message = "If you don't like something, change it. If you can't change it, change your attitude."
 
   end
 

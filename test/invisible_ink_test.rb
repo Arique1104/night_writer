@@ -34,4 +34,6 @@ class InvisibleInkTest < Minitest::Test
     assert_equal "0..0\n000.\n....\n", File.read(@invisible_ink.new_file)
   end
 
+
+
 end
