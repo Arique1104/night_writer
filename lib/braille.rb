@@ -1,8 +1,49 @@
 class Braille
- attr_reader  :dictionary
-  def initialize
+ attr_reader  :dictionary,
+              :message
+  def initialize(message)
     @dictionary = {}
     set_braille_dictionary
+    @message = message
+    set_grid
+  end
+
+  def get_braille
+    initial_result = []
+    array_of_letters = @message.downcase.gsub(/[\r\n]/, " ").split("")
+    array_of_letters.pop if array_of_letters.last == " "
+
+    array_of_letters.each do |letter|
+      initial_result << @dictionary[letter]
+    end
+    final_result = []
+    initial_result.each do |braille_string|
+      final_result << braille_string.scan(/../)
+    end
+    final_result
+  end
+
+  def set_grid
+    main_message = []
+    3.times do
+      main_message << Array.new
+    end
+
+    get_braille.map do |a,b,c|
+      main_message[0] << a
+      main_message[1] << b
+      main_message[2] << c
+
+    end
+
+    main_message.each do |line|
+      line << "\n"
+    end
+
+    joined_message = main_message.map do |line|
+        line.join
+    end
+    joined_message[0] + joined_message[1] + joined_message[2]
   end
 
   def set_braille_dictionary
@@ -32,6 +73,7 @@ class Braille
     @dictionary["x"] = "00..00"
     @dictionary["y"] = "00.000"
     @dictionary["z"] = "0..000"
+    @dictionary[" "] = "......"
   end
 
 end
