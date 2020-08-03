@@ -6,6 +6,9 @@ class InvisibleInk
   def initialize(message_file, new_file)
     @message_file = message_file
     @new_file = new_file
+    read_file
+    write_file
+    print_results
   end
 
   def read_file
@@ -15,8 +18,7 @@ class InvisibleInk
   def write_file
     message = read_file
     braille = Braille.new(message)
-    new_message = braille.set_grid
-    File.write(@new_file, new_message)
+    File.write(@new_file, braille.set_grid)
   end
 
   def print_results

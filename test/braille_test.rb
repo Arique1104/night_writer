@@ -2,8 +2,6 @@ require "minitest/autorun"
 require "minitest/pride"
 require "mocha/minitest"
 require "./lib/braille"
-require "./lib/night_writer"
-require "./lib/invisible_ink"
 
 class BrailleTest < Minitest::Test
   def setup

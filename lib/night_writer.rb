@@ -2,4 +2,4 @@ require "./lib/invisible_ink"
 
 message_file, new_file = ARGV
 
-InvisibleInk.new(message_file, new_file)
+night_writer = InvisibleInk.new(message_file, new_file)
