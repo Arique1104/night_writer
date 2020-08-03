@@ -36,7 +36,11 @@ class Braille
       whole_chunk.slice!(0..39)
       total_keys.slice!(0)
     end
-    results
+    lines = results.values
+    lines.map do |first, second, third|
+      first + second + third + "\n"
+    end
+    lines.join
   end
 
   def set_braille_dictionary
