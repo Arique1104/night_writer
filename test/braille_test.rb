@@ -88,5 +88,16 @@ class BrailleTest < Minitest::Test
 
   end
 
+  def test_it_can_create_initial_first_line
+
+    assert_equal ["0.0.0.0.0....00.0.0.00", "00.00.0..0..00.0000..0", "....0.0.0....00.0.0..."], @braille.initial_first_line
+
+  end
+
+  def test_it_can_provide_first_line_less_than_80
+    first_line = @braille.main_message.map {|line| line.join}
+    assert_equal "", @braille.arrays_by_length
+  end
+
 
 end

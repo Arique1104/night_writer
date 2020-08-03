@@ -37,23 +37,31 @@ class Braille
     result
   end
 
-  def set_grid
-    first_line = main_message.map do |line|
-        line.join
-    end
+  def arrays_by_length
 
-    if first_line[0].length < 80
+  end
+
+  def initial_first_line
+    main_message.map do |line|
+      line.join
+    end
+  end
+
+  def set_grid
+
+    if initial_first_line[0].length < 80
+
       second_line = []
-      first_line.map do |line|
+      initial_first_line.map do |line|
         second_line << line[80..-1]
         line.slice!(80..-1)
       end
-      final_result = first_line.join("\n") + "\n" + second_line.join("\n")
+      final_result = initial_first_line.join("\n") + "\n" + second_line.join("\n")
       final_result
-    elsif first_line[0].length >= 79 || first_line[0].length <= 159
+    elsif initial_first_line[0].length >= 79 || initial_first_line[0].length <= 159
       second_line = []
       third_line = []
-      first_line.map do |line|
+      initial_first_line.map do |line|
         second_line << line[80..-1]
         line.slice!(80..-1)
       end
@@ -61,7 +69,7 @@ class Braille
         third_line << line[80..-1]
         line.slice!(80..-1)
       end
-      final_result = first_line.join("\n") + "\n" + second_line.join("\n") + "\n" + third_line.join("\n")
+      final_result = initial_first_line.join("\n") + "\n" + second_line.join("\n") + "\n" + third_line.join("\n")
       final_result
     end
 
