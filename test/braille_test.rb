@@ -32,6 +32,8 @@ class BrailleTest < Minitest::Test
     assert_equal "00....", @braille.dictionary["c"]
     assert_equal "......", @braille.dictionary[" "]
     assert_equal "..000.", @braille.dictionary["!"]
+
+
     assert_equal "....0.", @braille.dictionary["'"]
     assert_equal "..0...", @braille.dictionary[","]
     assert_equal "....00", @braille.dictionary["-"]

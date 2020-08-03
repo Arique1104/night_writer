@@ -74,6 +74,8 @@ class Braille
     @dictionary["y"] = "00.000"
     @dictionary["z"] = "0..000"
     @dictionary[" "] = "......"
+    @dictionary["!"] = "..000."
+
   end
 
 end
