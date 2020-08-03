@@ -6,9 +6,7 @@ class InvisibleInk
   def initialize(message_file, new_file)
     @message_file = message_file
     @new_file = new_file
-    read_file
-    write_file
-    print_results
+    # night_writer_suite
   end
 
   def read_file
@@ -23,6 +21,12 @@ class InvisibleInk
 
   def print_results
     print "Created '#{@new_file}' containing #{write_file} characters"
+  end
+
+  def night_writer_suite
+    read_file
+    write_file
+    print_results
   end
 
 end

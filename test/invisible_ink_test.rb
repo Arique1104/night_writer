@@ -35,7 +35,7 @@ class InvisibleInkTest < Minitest::Test
   end
 
   def test_it_can_use_read_write_print_suite
-    assert_equal "", @invisible_ink.night_writer_suite
+    assert_nil @invisible_ink.night_writer_suite
 
   end
 
