@@ -23,18 +23,21 @@ class Braille
     final_result
   end
 
-  def set_grid
-    main_message = []
+  def main_message
+    result = []
     3.times do
-      main_message << Array.new
+      result << Array.new
     end
 
     get_braille.map do |a,b,c|
-        main_message[0] << a
-        main_message[1] << b
-        main_message[2] << c
+      result[0] << a
+      result[1] << b
+      result[2] << c
     end
+    result
+  end
 
+  def set_grid
     first_line = main_message.map do |line|
         line.join
     end

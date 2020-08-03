@@ -80,5 +80,13 @@ class BrailleTest < Minitest::Test
 
   end
 
+  def test_it_can_create_main_message_initial_array
+
+    assert_equal [["0.", "0.", "0.", "0.", "0.", "..", ".0", "0.", "0.", "0.", "00"],
+ ["00", ".0", "0.", "0.", ".0", "..", "00", ".0", "00", "0.", ".0"],
+ ["..", "..", "0.", "0.", "0.", "..", ".0", "0.", "0.", "0.", ".."]], @braille.main_message
+
+  end
+
 
 end
