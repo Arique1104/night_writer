@@ -39,8 +39,6 @@ class BrailleTest < Minitest::Test
 
     assert_equal "..00.0", @braille.dictionary["."]
     assert_equal "..0.00", @braille.dictionary["?"]
-
-
   end
 
   def test_it_can_write_one_letter_in_braille
@@ -51,7 +49,6 @@ class BrailleTest < Minitest::Test
   end
 
   def test_it_can_get_a_whole_word_and_pull_it_into_braille
-    # skip
     message1 = "hello world"
     braille1 = Braille.new(message1)
     assert_equal [["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."],["0.", "0.", "0."],["0.", ".0", "0."], ["..", "..", ".."], [".0", "00", ".0"], ["0.", ".0", "0."], ["0.", "00", "0."], ["0.", "0.", "0."],["00", ".0", ".."]], braille1.get_braille
@@ -69,15 +66,19 @@ class BrailleTest < Minitest::Test
   end
 
   def test_it_can_print_braille_correctly
+    expected = "0.0.0.0.0....00.0.0.00\n00.00.0..0..00.0000..0\n....0.0.0....00.0.0...\n"
 
-    assert_equal "0.0.0.0.0....00.0.0.00\n00.00.0..0..00.0000..0\n....0.0.0....00.0.0...\n", @braille.set_grid
-
+    assert expected, @braille.set_grid
   end
 
   def test_it_can_start_a_new_line_after_80_dots_have_been_set
 
-    message = "If you don't like something, change it. If you can't change it, change your attitude."
+    mia_angelou = "If you don't like something, change it. If you can't change it, change your attitude."
+    braille4 = Braille.new(mia_angelou)
+    expected = ".000..000.0...000.00...0..0..00.0....00.000..00..00000....000.0.00000....0.0....\n0.0....0.0.....0.0.0..00..0.0....0..0..0...000000..0000.....00...000.0..0.0000..\n......000.00....0.0.0.0...0...0.....0.0.0...0.....0.............0.........0..0..\n\n.000..000.0...000.00...0..000.0.00000....0.0....000.0.00000...000.0.0...0..0.0.0\n0.0....0.0.........0..00....00...000.0..0.000.....00...000.0...0.0..00....00000.\n......000.00......0.0.0.........0.........0...........0.......000.000.....0.0...\n\n.00.000...\n00...0.000\n0.00.....0\n\n"
+    assert expected, braille4.set_grid
 
   end
+
 
 end

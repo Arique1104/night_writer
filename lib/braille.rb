@@ -30,20 +30,38 @@ class Braille
     end
 
     get_braille.map do |a,b,c|
-      main_message[0] << a
-      main_message[1] << b
-      main_message[2] << c
-
+        main_message[0] << a
+        main_message[1] << b
+        main_message[2] << c
     end
 
-    main_message.each do |line|
-      line << "\n"
-    end
-
-    joined_message = main_message.map do |line|
+    first_line = main_message.map do |line|
         line.join
     end
-    joined_message[0] + joined_message[1] + joined_message[2]
+
+    if first_line[0].length < 80
+      second_line = []
+      first_line.map do |line|
+        second_line << line[80..-1]
+        line.slice!(80..-1)
+      end
+      final_result = first_line.join("\n") + "\n" + second_line.join("\n")
+      final_result
+    elsif first_line[0].length >= 79 || first_line[0].length <= 159
+      second_line = []
+      third_line = []
+      first_line.map do |line|
+        second_line << line[80..-1]
+        line.slice!(80..-1)
+      end
+      second_line.map do |line|
+        third_line << line[80..-1]
+        line.slice!(80..-1)
+      end
+      final_result = first_line.join("\n") + "\n" + second_line.join("\n") + "\n" + third_line.join("\n")
+      final_result
+    end
+
   end
 
   def set_braille_dictionary

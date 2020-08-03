@@ -15,7 +15,7 @@ class InvisibleInk
   def write_file
     message = read_file
     braille = Braille.new(message)
-    new_message = braille.set_grid
+    new_message = braille.set_grid # do I need this?
     File.write(@new_file, new_message)
   end
 
