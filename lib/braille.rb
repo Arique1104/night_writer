@@ -24,21 +24,19 @@ class Braille
   end
 
   def main_message
+    #explore cutting here
     result = []
     3.times do
       result << Array.new
     end
 
     get_braille.map do |a,b,c|
+      require "pry"; binding.pry
       result[0] << a
       result[1] << b
       result[2] << c
     end
     result
-  end
-
-  def arrays_by_length
-
   end
 
   def initial_first_line
@@ -48,7 +46,12 @@ class Braille
   end
 
   def grid_logic
-
+    arrays_needed = initial_first_line[0].length / 80.0
+    main_array = []
+    arrays_needed.ceil.times do
+      main_array << Array.new
+    end
+    require "pry"; binding.pry
   end
 
   def set_grid
