@@ -94,9 +94,10 @@ class BrailleTest < Minitest::Test
 
   end
 
-  def test_it_can_provide_first_line_less_than_80
-    first_line = @braille.main_message.map {|line| line.join}
-    assert_equal "", @braille.arrays_by_length
+  def test_it_can_dynamically_produce_grid_logic
+
+    assert_equal " ", @braille.grid_logic
+
   end
 
 

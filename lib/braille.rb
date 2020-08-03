@@ -47,6 +47,10 @@ class Braille
     end
   end
 
+  def grid_logic
+
+  end
+
   def set_grid
 
     if initial_first_line[0].length < 80
