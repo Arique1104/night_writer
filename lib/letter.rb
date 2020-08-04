@@ -12,15 +12,18 @@ class Letter
   end
 
   def find_word
+    #scan_letters
     array = []
     @message.each do |line|
       array << line.scan(/../)
     end
+    #transpose_letters
     transposed_array = array.transpose
     letters = []
     transposed_array.map do |letter|
       letters << find_letter(letter.join)
     end
+    #join_letters
     letters.join
   end
 
