@@ -1,7 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
-require "mocha/minitest"
-require "./lib/invisible_glasses"
+require "./test/test_helper"
 
 class InvisibleGlassesTest < Minitest::Test
   def setup
