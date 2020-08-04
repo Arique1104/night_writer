@@ -11,6 +11,11 @@ class InvisibleGlasses
     File.read(@braille_file).split
   end
 
+  def write_file
+    message = read_file
+    #add translation method here
+    File.write(@original_message, message)
 
+  end
 
 end
