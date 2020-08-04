@@ -4,6 +4,7 @@ class Letter
   def initialize(message)
     @message = message
     @english_dictionary = {}
+    set_english_dictionary
   end
 
   def set_english_dictionary
