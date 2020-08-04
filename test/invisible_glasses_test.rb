@@ -29,4 +29,9 @@ class InvisibleGlassesTest < Minitest::Test
 
   end
 
+  def test_it_can_print_results
+    expected = "Created 'original_message.txt' containing 78 characters."
+    assert_equal expected, @glasses.print_results
+  end
+
 end
