@@ -1,3 +1,5 @@
+require "./lib/letter"
+
 class InvisibleGlasses
  attr_reader  :braille_file,
               :original_message
@@ -13,8 +15,8 @@ class InvisibleGlasses
 
   def write_file
     message = read_file
-    #add translation method here
-    File.write(@original_message, message)
+    letter = Letter.new(message)
+    File.write(@original_message, letter.find_word)
 
   end
 
