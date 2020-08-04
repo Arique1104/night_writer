@@ -18,4 +18,8 @@ class InvisibleGlasses
 
   end
 
+  def print_results
+    print "Created '#{@original_message}' containing #{write_file} characters."
+  end
+
 end
