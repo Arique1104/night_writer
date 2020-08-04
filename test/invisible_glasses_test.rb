@@ -7,14 +7,15 @@ class InvisibleGlassesTest < Minitest::Test
   def setup
     @braille_file = "braille.txt"
     @new_file = "original_message.txt"
-    @invisible_glasses = InvisibleGlasses.new(@braille_file, @new_file)
-  end
-  
-  def test_it_exists
-    assert_instance_of InvisibleGlasses, @invisible_glasses
+    @glasses = InvisibleGlasses.new(@braille_file, @new_file)
   end
 
-  #def test_it_has_attributes
-  #end
+  def test_it_exists
+    assert_instance_of InvisibleGlasses, @glasses
+  end
+
+  def test_it_has_attributes
+    assert_equal @braille_file, @glasses.braille
+  end
 
 end

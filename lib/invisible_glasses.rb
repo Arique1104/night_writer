@@ -1,5 +1,5 @@
 class InvisibleGlasses
- #attr_reader
+ attr_reader
   def initialize(braille_file, og_file)
 
   end
