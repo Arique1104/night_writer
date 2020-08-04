@@ -6,7 +6,7 @@ class InvisibleInk
   def initialize(message_file, new_file)
     @message_file = message_file
     @new_file = new_file
-    # night_writer_suite
+    night_writer_suite
   end
 
   def read_file
