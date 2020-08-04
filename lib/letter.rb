@@ -7,6 +7,10 @@ class Letter
     set_english_dictionary
   end
 
+  def find_letter(braille)
+    @english_dictionary[braille]
+  end
+
   def set_english_dictionary
     @english_dictionary["0....."] = "a"
     @english_dictionary["0.0..."] = "b"
