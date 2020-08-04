@@ -5,4 +5,6 @@ class InvisibleGlasses
     @original_message = og_file
   end
 
+  
+
 end
