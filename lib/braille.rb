@@ -8,12 +8,16 @@ class Braille
   end
 
   def get_braille
-    initial_result = []
+    #array of letters
     array_of_letters = @message.downcase.gsub(/[\r\n]/, " ").split("")
     array_of_letters.pop if array_of_letters.last == " "
+    #find braille
+    initial_result = []
     array_of_letters.each do |letter|
       initial_result << @dictionary[letter]
     end
+
+    # find braille string
     final_result = []
     initial_result.each do |braille_string|
       final_result << braille_string.scan(/../)
@@ -26,6 +30,7 @@ class Braille
     whole_chunk = get_braille
     total_lines = (whole_chunk.count / 40.0).ceil
     total_keys = (1..total_lines).to_a
+    #helper_method
     total_lines.times do
       forty_chunk = whole_chunk[0..39]
       transposed_forty = forty_chunk.transpose
@@ -34,6 +39,7 @@ class Braille
       whole_chunk.slice!(0..39)
       total_keys.slice!(0)
     end
+    #helper_method
     lines = results.values
     lines.map do |first, second, third|
       first + second + third + "\n"
