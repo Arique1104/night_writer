@@ -34,4 +34,10 @@ class LetterTest < Minitest::Test
 
   end
 
+  def test_it_can_find_words
+    message = ["0.0.0.0.0....00.0.0.00", "00.00.0..0..00.0000..0", "....0.0.0....00.0.0..."]
+    letter = Letter.new(message)
+    assert_equal "hello world", letter.find_word
+  end
+
 end
