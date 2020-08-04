@@ -18,6 +18,7 @@ class LetterTest < Minitest::Test
 
   def test_it_has_attributes
     assert_equal @message, @letter.message
+    @letter.stubs(:english_dictionary).returns({})
     expected = {}
     assert_equal expected, @letter.english_dictionary
   end
