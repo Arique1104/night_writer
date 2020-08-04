@@ -7,6 +7,9 @@ class InvisibleGlasses
   def initialize(braille_file, og_file)
     @braille_file = braille_file
     @original_message = og_file
+    read_file
+    write_file
+    print_results
   end
 
   def read_file
