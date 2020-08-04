@@ -12,3 +12,22 @@ INSTRUCTIONS:
 - The default branch created with git is named master. Rename this to main by running: git symbolic-ref HEAD refs/heads/main
 
 No more excuses.  Let's end racism, let's demand reparation for our black brothers, sisters, and siblings, and let's pick up our role as anti-racists...one conversation and relationship at a time.
+
+##############################
+
+#Night Writer
+- Learning Goals / Areas of Focus
+- Practice breaking a program into logical components
+- Testing components in isolation and in combination
+- Applying Enumerable techniques in a real context
+- Reading text from and writing text to files
+##Background
+The idea of Night Writing was first developed for Napoleon’s army so soldiers could communicate silently at night without light. The concept of night writing led to Louis Braille’s development of his Braille tactile writing system.
+
+##Project Requirements
+In this project we’ll implement systems for generating Braille-like text from English characters and the reverse.
+
+- Unlike previous projects where we may have provided an interaction pattern representing what you might see in Pry, this tool will be used from the command line. The general pattern is that we will run the program, providing an existing file for input, and the name of a nonexistent file for output, and the program will provide us with a confirmation:
+
+`$ ruby ./lib/night_writer.rb message.txt braille.txt
+Created 'braille.txt' containing 256 characters`
