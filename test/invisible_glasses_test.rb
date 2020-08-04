@@ -24,4 +24,9 @@ class InvisibleGlassesTest < Minitest::Test
     assert_equal expected, @glasses.read_file
   end
 
+  def test_it_can_write
+    assert_equal "", @glasses.write_file
+
+  end
+
 end

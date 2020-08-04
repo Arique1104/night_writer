@@ -11,4 +11,6 @@ class InvisibleGlasses
     File.read(@braille_file).split
   end
 
+
+
 end
