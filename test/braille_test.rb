@@ -1,7 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
-require "mocha/minitest"
-require "./lib/braille"
+require "./test/test_helper"
 
 class BrailleTest < Minitest::Test
   def setup

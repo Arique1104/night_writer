@@ -1,9 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
-require "mocha/minitest"
-require "./lib/invisible_ink"
-require "./lib/braille"
-
+require "./test/test_helper"
 
 class InvisibleInkTest < Minitest::Test
   def setup
