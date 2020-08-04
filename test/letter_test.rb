@@ -28,4 +28,10 @@ class LetterTest < Minitest::Test
 
   end
 
+  def test_it_can_find_english_letter
+
+    assert_equal "k", @letter.find_letter("0...0.")
+
+  end
+
 end
