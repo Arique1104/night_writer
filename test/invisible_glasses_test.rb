@@ -20,7 +20,7 @@ class InvisibleGlassesTest < Minitest::Test
   end
 
   def test_it_can_read_a_file
-    expected = "0.0.0.0.0....00.0.0.00\n00.00.0..0..00.0000..0\n....0.0.0....00.0.0...\n"
+    expected = ["0.0.0.0.0....00.0.0.00", "00.00.0..0..00.0000..0", "....0.0.0....00.0.0..."]
     assert_equal expected, @glasses.read_file
   end
 
