@@ -1,9 +1,4 @@
-require "minitest/autorun"
-require "minitest/pride"
-require "mocha/minitest"
-require "./lib/letter"
-require "./lib/braille"
-
+require "./test/test_helper"
 
 class LetterTest < Minitest::Test
 
