@@ -15,7 +15,7 @@ class InvisibleGlassesTest < Minitest::Test
   end
 
   def test_it_has_attributes
-    assert_equal @braille_file, @glasses.braille
+    assert_equal @braille_file, @glasses.braille_file
   end
 
 end
