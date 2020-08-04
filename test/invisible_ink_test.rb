@@ -34,4 +34,9 @@ class InvisibleInkTest < Minitest::Test
     assert_equal "0..0\n000.\n....\n", File.read(@invisible_ink.new_file)
   end
 
+  def test_it_can_use_read_write_print_suite
+    assert_nil @invisible_ink.night_writer_suite
+
+  end
+
 end

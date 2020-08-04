@@ -3,16 +3,14 @@ class Braille
               :message
   def initialize(message)
     @dictionary = {}
-    set_braille_dictionary
     @message = message
-    set_grid
+    set_braille_dictionary
   end
 
   def get_braille
     initial_result = []
     array_of_letters = @message.downcase.gsub(/[\r\n]/, " ").split("")
     array_of_letters.pop if array_of_letters.last == " "
-
     array_of_letters.each do |letter|
       initial_result << @dictionary[letter]
     end
@@ -24,26 +22,23 @@ class Braille
   end
 
   def set_grid
-    main_message = []
-    3.times do
-      main_message << Array.new
+    results = Hash.new
+    whole_chunk = get_braille
+    total_lines = (whole_chunk.count / 40.0).ceil
+    total_keys = (1..total_lines).to_a
+    total_lines.times do
+      forty_chunk = whole_chunk[0..39]
+      transposed_forty = forty_chunk.transpose
+      joined_forty = transposed_forty.map {|third| third.join + "\n"}
+      results[total_keys[0]] = joined_forty
+      whole_chunk.slice!(0..39)
+      total_keys.slice!(0)
     end
-
-    get_braille.map do |a,b,c|
-      main_message[0] << a
-      main_message[1] << b
-      main_message[2] << c
-
+    lines = results.values
+    lines.map do |first, second, third|
+      first + second + third + "\n"
     end
-
-    main_message.each do |line|
-      line << "\n"
-    end
-
-    joined_message = main_message.map do |line|
-        line.join
-    end
-    joined_message[0] + joined_message[1] + joined_message[2]
+    lines.join
   end
 
   def set_braille_dictionary
@@ -74,6 +69,13 @@ class Braille
     @dictionary["y"] = "00.000"
     @dictionary["z"] = "0..000"
     @dictionary[" "] = "......"
+    @dictionary["!"] = "..000."
+    @dictionary["'"] = "....0."
+    @dictionary[","] = "..0..."
+    @dictionary["-"] = "....00"
+    @dictionary["."] = "..00.0"
+    @dictionary["?"] = "..0.00"
+
   end
 
 end
