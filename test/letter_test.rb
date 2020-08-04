@@ -14,7 +14,8 @@ class LetterTest < Minitest::Test
     assert_instance_of Letter, @letter
   end
 
-  #def test_it_has_attributes
-  #end
+  def test_it_has_attributes
+    assert_equal @message, @letter.message
+  end
 
 end

@@ -1,5 +1,5 @@
 class Letter
- #attr_reader
+ # attr_reader
   def initialize(message)
 
   end
