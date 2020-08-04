@@ -11,6 +11,19 @@ class Letter
     @english_dictionary[braille]
   end
 
+  def find_word
+    array = []
+    @message.each do |line|
+      array << line.scan(/../)
+    end
+    transposed_array = array.transpose
+    letters = []
+    transposed_array.map do |letter|
+      letters << find_letter(letter.join)
+    end
+    letters.join
+  end
+
   def set_english_dictionary
     @english_dictionary["0....."] = "a"
     @english_dictionary["0.0..."] = "b"
